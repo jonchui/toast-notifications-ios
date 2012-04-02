@@ -43,6 +43,8 @@ typedef enum iToastType {
 	NSString *text;
 }
 
++ (void) displayText:(NSString *) text withGravity:(iToastGravity) gravity forSeconds:(CGFloat) duration;
+
 - (void) show;
 - (void) show:(iToastType) type;
 - (iToast *) setDuration:(NSInteger ) duration;

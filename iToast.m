@@ -20,6 +20,12 @@ static iToastSettings *sharedSettings = nil;
 
 @implementation iToast
 
+// class function, to simplify clal. duration is in seconds.
+
++ (void) displayText:(NSString *) text withGravity:(iToastGravity) gravity forSeconds:(CGFloat) duration{
+    [[[[iToast makeText:text] setGravity:gravity] setDuration:(int)(duration*1000)] show:iToastTypeNotice];
+}
+
 
 - (id) initWithText:(NSString *) tex{
 	if (self = [super init]) {
